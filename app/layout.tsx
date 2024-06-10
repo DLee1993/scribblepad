@@ -22,12 +22,7 @@ export default function RootLayout({
                 <link rel="icon" href="/images/favicon.ico" />
             </head>
             <body className={inter.className}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
+                <ThemeProvider attribute="class" defaultTheme="system">
                     <Navbar />
                     {children}
                 </ThemeProvider>
