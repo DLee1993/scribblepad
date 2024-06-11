@@ -21,6 +21,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Search from "./Search";
 
 export default function Navbar() {
     const [menuStatus, setMenuStatus] = useState<boolean>(false);
@@ -31,14 +32,14 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="flex justify-between items-center p-4 border-b-2 border-slate-100">
+        <nav className="flex justify-between items-center py-4 px-10 border-b-2 border-slate-100">
             <Sheet open={menuStatus} onOpenChange={setMenuStatus}>
                 <SheetTrigger>
                     <HamburgerMenuIcon className="size-6" />
                 </SheetTrigger>
                 <SheetContent
                     side="left"
-                    className="flex flex-col justify-start items-start py-6 px-3 sm:max-w-[18rem]"
+                    className="flex flex-col justify-start items-start py-6 px-3 sm:max-w-[18rem] capitalize"
                 >
                     <SheetHeader>
                         <SheetTitle className="font-bold text-md pl-3">
@@ -47,13 +48,13 @@ export default function Navbar() {
                             </Link>
                         </SheetTitle>
                     </SheetHeader>
-                    <section className="flex flex-col justify-between items-start flex-1 w-full mt-10 capitalize">
+                    <section className="flex flex-col justify-between items-start flex-1 w-full mt-10">
                         <ul id="menuList">
                             <li>
                                 <Link
                                     href="/notes"
                                     onClick={changeMenuStatus}
-                                    className={`link ${pathname === "/notes" ? "active" : ""}`}
+                                    className={`link ${pathname === "/" ? "active" : ""}`}
                                 >
                                     <span>
                                         <ReaderIcon />
@@ -102,7 +103,10 @@ export default function Navbar() {
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
-            <p>other nav things</p>
+            <section className="flex justify-center items-center">
+                <Search />
+                <p>other nav things</p>
+            </section>
         </nav>
     );
 }
