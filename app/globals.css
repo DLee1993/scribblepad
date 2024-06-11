@@ -65,10 +65,18 @@
     }
 
     #menuList li a {
-        @apply flex justify-start items-center gap-x-2 py-2 rounded-md pl-3 hover:bg-slate-200;
+        @apply flex justify-start items-center gap-x-2 py-2 rounded-md pl-3;
     }
 
-    #menuList li a.active {
-        @apply bg-slate-950 text-slate-50 transition-colors;
+    a {
+        @apply hover:bg-slate-200;
+    }
+
+    a.active {
+        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950;
+    }
+
+    .dropdownItem {
+        @apply rounded-md hover:cursor-pointer;
     }
 }
