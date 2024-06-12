@@ -84,11 +84,12 @@
         @apply hover:bg-slate-200 dark:hover:bg-slate-50/10;
     }
 
-    #menuList a.active {
-        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950 cursor-not-allowed;
+    #menuList a.active, #footer a.active {
+        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950 dark:bg-slate-50/10 cursor-not-allowed;
     }
 
-    .dropdownItem {
-        @apply rounded-md hover:cursor-pointer;
+    .dropdownItem,
+    .dropdownItem a {
+        @apply w-full flex justify-between items-center rounded-md hover:cursor-pointer;
     }
 }
