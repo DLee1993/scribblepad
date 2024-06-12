@@ -34,10 +34,10 @@ export function ThemeToggle() {
                     <span className="sr-only">Toggle theme</span>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+            <DropdownMenuContent align="end" className="w-40">
+                <DropdownMenuItem onClick={() => setTheme("light")} className="text-base md:text-sm">Light</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")} className="text-base md:text-sm">Dark</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")} className="text-base md:text-sm">System</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     );

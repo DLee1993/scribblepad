@@ -16,19 +16,19 @@ export default function Account() {
             <DropdownMenuTrigger asChild>
                 <Button variant="outline">Account</Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-40">
+            <DropdownMenuContent align="end" className="w-52">
                 <DropdownMenuLabel>My account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="dropdownItem">
+                <DropdownMenuItem className="dropdownItem text-base md:text-sm">
                     <Link href="/settings">
                         Settings <GearIcon />
                     </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="dropdownItem">
+                <DropdownMenuItem className="dropdownItem text-base md:text-sm">
                     Logout
                     <LockClosedIcon />
                 </DropdownMenuItem>
-                <DropdownMenuItem className="dropdownItem">
+                <DropdownMenuItem className="dropdownItem text-base md:text-sm">
                     Delete Account <TrashIcon />
                 </DropdownMenuItem>
             </DropdownMenuContent>
