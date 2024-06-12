@@ -75,12 +75,17 @@
         @apply flex justify-start items-center gap-x-2 py-2 rounded-md pl-3;
     }
 
-    a {
-        @apply hover:bg-slate-200;
+    a#logo {
+        @apply hover:bg-none dark:hover:bg-none;
     }
 
-    a.active {
-        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950;
+    #menuList a,
+    #footer a {
+        @apply hover:bg-slate-200 dark:hover:bg-slate-50/10;
+    }
+
+    #menuList a.active {
+        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950 cursor-not-allowed;
     }
 
     .dropdownItem {

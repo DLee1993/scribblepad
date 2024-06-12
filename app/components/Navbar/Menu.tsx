@@ -86,11 +86,11 @@ export default function Menu() {
                     </ul>
                 </section>
                 <Separator />
-                <SheetFooter className="w-full">
+                <SheetFooter className="w-full" id="footer">
                     <Link
                         href="/support"
                         onClick={changeMenuStatus}
-                        className={`w-full flex justify-start items-center gap-x-2 py-2 rounded-md pl-3 hover:bg-slate-200 ${
+                        className={`w-full flex justify-start items-center gap-x-2 py-2 rounded-md pl-3 ${
                             pathname === "/support" ? "active" : ""
                         }`}
                     >
