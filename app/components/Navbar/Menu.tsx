@@ -17,7 +17,7 @@ import {
     ReaderIcon,
     CalendarIcon,
     CheckboxIcon,
-    GearIcon,
+    DesktopIcon,
     PersonIcon,
 } from "@radix-ui/react-icons";
 
@@ -52,6 +52,18 @@ export default function Menu() {
                                 href="/"
                                 onClick={changeMenuStatus}
                                 className={`link ${pathname === "/" ? "active" : ""}`}
+                            >
+                                <span>
+                                    <DesktopIcon />
+                                </span>
+                                dashboard
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/notes"
+                                onClick={changeMenuStatus}
+                                className={`link ${pathname === "/notes" ? "active" : ""}`}
                             >
                                 <span>
                                     <ReaderIcon />
