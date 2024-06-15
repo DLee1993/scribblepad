@@ -36,7 +36,7 @@ export default function Menu() {
             </SheetTrigger>
             <SheetContent
                 side="left"
-                className="flex flex-col justify-start items-start py-6 px-3 sm:max-w-[18rem] capitalize"
+                className="flex flex-col justify-start items-start py-6 px-3 sm:max-w-[18rem] capitalize dark:bg-[var(--background)]"
             >
                 <SheetHeader>
                     <SheetTitle className="font-bold text-md pl-3">
@@ -45,13 +45,13 @@ export default function Menu() {
                         </Link>
                     </SheetTitle>
                 </SheetHeader>
-                <section className="flex flex-col justify-between items-start flex-1 w-full mt-10">
+                <section className="flex flex-col justify-between items-start flex-1 w-full mt-10 text-base">
                     <ul id="menuList">
                         <li>
                             <Link
-                                href="/"
+                                href="/dashboard"
                                 onClick={changeMenuStatus}
-                                className={`link ${pathname === "/" ? "active" : ""}`}
+                                className={`link ${pathname === "/dashboard" ? "active" : ""}`}
                             >
                                 <span>
                                     <DesktopIcon />
@@ -98,7 +98,7 @@ export default function Menu() {
                     </ul>
                 </section>
                 <Separator />
-                <SheetFooter className="w-full" id="footer">
+                <SheetFooter className="w-full text-base" id="footer">
                     <Link
                         href="/support"
                         onClick={changeMenuStatus}

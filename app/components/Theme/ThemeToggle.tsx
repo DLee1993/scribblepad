@@ -6,10 +6,12 @@ import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
     DropdownMenuItem,
-    DropdownMenuTrigger,
+    DropdownMenuSubTrigger,
+    DropdownMenuPortal,
+    DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
@@ -26,19 +28,32 @@ export function ThemeToggle() {
     }
 
     return (
-        <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                    <span className="sr-only">Toggle theme</span>
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-40">
-                <DropdownMenuItem onClick={() => setTheme("light")} className="text-base md:text-sm">Light</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")} className="text-base md:text-sm">Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")} className="text-base md:text-sm">System</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
+        <DropdownMenuGroup>
+            <DropdownMenuSub>
+                <DropdownMenuSubTrigger className="text-base md:text-sm">Themes</DropdownMenuSubTrigger>
+                <DropdownMenuPortal>
+                    <DropdownMenuSubContent>
+                        <DropdownMenuItem
+                            onClick={() => setTheme("light")}
+                            className="text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950"
+                        >
+                            Light
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                            onClick={() => setTheme("dark")}
+                            className="text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950"
+                        >
+                            Dark
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                            onClick={() => setTheme("system")}
+                            className="text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950"
+                        >
+                            System
+                        </DropdownMenuItem>
+                    </DropdownMenuSubContent>
+                </DropdownMenuPortal>
+            </DropdownMenuSub>
+        </DropdownMenuGroup>
     );
 }
