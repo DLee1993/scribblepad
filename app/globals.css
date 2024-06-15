@@ -41,20 +41,18 @@
 
     :root {
         --headerHeight: 5rem;
-        --background: rgb(248 250 252);
-        --foreground: rgb(2 6 23);
+        --warning: rgb(220, 38, 38);
+        --background: rgb(248, 250, 252);
+        --foreground: rgb(0, 0, 0);
     }
 
-    [data-theme="dark"] {
-        --foreground: rgb(248 250 252);
-        --background: rgb(2 6 23);
+    .dark {
+        --foreground: rgb(248, 250, 252);
+        --background: rgb(0, 0, 0);
     }
 }
 
 @layer base {
-    * {
-        @apply border-[var(--border)];
-    }
     body {
         @apply text-base;
     }
@@ -62,7 +60,7 @@
         @apply min-h-[var(--headerHeight)];
     }
     main {
-        @apply min-h-[calc(100vh-var(--headerHeight))] grid place-content-center;
+        @apply min-h-[calc(100vh-var(--headerHeight))];
     }
 }
 
@@ -81,15 +79,16 @@
 
     #menuList a,
     #footer a {
-        @apply hover:bg-slate-200 dark:hover:bg-slate-50/10;
+        @apply hover:bg-slate-200 dark:hover:bg-slate-50/15;
     }
 
-    #menuList a.active, #footer a.active {
-        @apply bg-slate-950 text-slate-50 transition-colors hover:bg-slate-950 dark:bg-slate-50/10 cursor-not-allowed;
+    #menuList a.active,
+    #footer a.active {
+        @apply transition-colors bg-[var(--foreground)] text-[var(--background)] dark:bg-[var(--foreground)] dark:text-[var(--background)];
     }
 
     .dropdownItem,
     .dropdownItem a {
-        @apply w-full flex justify-between items-center rounded-md hover:cursor-pointer;
+        @apply w-full flex justify-between items-center rounded-md;
     }
 }
