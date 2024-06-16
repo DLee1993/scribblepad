@@ -26,15 +26,20 @@ import ProfileAvatar from "./ProfileAvatar";
 import { ThemeToggle } from "../Theme/ThemeToggle";
 
 export default function Account() {
+    const [menuStatus, setMenuStatus] = useState<boolean>(false);
     const [toggleLogout, setToggleLogout] = useState<boolean>(false);
     const [toggleDeleteAccount, setToggleDeleteAccount] = useState<boolean>(false);
 
     const toggleLogoutDialog = () => setToggleLogout(!toggleLogout);
     const toggleDeleteAccountDialog = () => setToggleDeleteAccount(!toggleLogout);
 
+    const changeMenuStatus = () => {
+        setMenuStatus(!menuStatus);
+    };
+
     return (
         <>
-            <DropdownMenu>
+            <DropdownMenu open={menuStatus} onOpenChange={setMenuStatus}>
                 <DropdownMenuTrigger asChild>
                     <Button variant="default" className="p-2 rounded-full w-10 h-10">
                         <ProfileAvatar />
@@ -45,7 +50,7 @@ export default function Account() {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="dropdownItem text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950 p-0">
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
-                        <Link href="/settings" className="block w-full h-full px-2 py-1.5">
+                        <Link href="/settings" className="block w-full h-full px-2 py-1.5" onClick={changeMenuStatus}>
                             Profile <PersonIcon />
                         </Link>
                     </DropdownMenuItem>
