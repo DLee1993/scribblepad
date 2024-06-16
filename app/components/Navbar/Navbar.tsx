@@ -4,6 +4,7 @@ import Account from "./Account";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+    //TODO only show navbar based on session, if no session, no navbar
     const pathname = usePathname();
     return (
         <>
