@@ -30,7 +30,9 @@ export function ThemeToggle() {
     return (
         <DropdownMenuGroup>
             <DropdownMenuSub>
-                <DropdownMenuSubTrigger className="text-base md:text-sm">Themes</DropdownMenuSubTrigger>
+                <DropdownMenuSubTrigger className="text-base md:text-sm data-[state=open]:bg-slate-950 data-[state=open]:text-slate-50 dark:data-[state=open]:bg-slate-50 dark:data-[state=open]:text-slate-950 focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950">
+                    Themes
+                </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                     <DropdownMenuSubContent>
                         <DropdownMenuItem
