@@ -60,7 +60,7 @@
         @apply min-h-[var(--headerHeight)];
     }
     main {
-        @apply min-h-[calc(100vh-var(--headerHeight))];
+        @apply min-h-[calc(100vh-var(--headerHeight))] py-4 px-4 md:px-6 lg:px-8 xl:px-10 grid place-items-center;
     }
 }
 
@@ -70,7 +70,7 @@
     }
 
     #menuList li a {
-        @apply flex justify-start items-center gap-x-2 py-2 rounded-md pl-3;
+        @apply flex justify-between items-center p-2 rounded-md pl-3;
     }
 
     a#logo {
