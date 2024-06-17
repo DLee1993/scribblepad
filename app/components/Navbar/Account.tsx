@@ -50,10 +50,17 @@ export default function Account() {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="dropdownItem text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950 p-0">
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
-                        <Link href="/settings" className="block w-full h-full px-2 py-1.5" onClick={changeMenuStatus}>
+                        <Link
+                            href="/profile"
+                            className="block w-full h-full px-2 py-1.5"
+                            onClick={changeMenuStatus}
+                        >
                             Profile <PersonIcon />
                         </Link>
                     </DropdownMenuItem>
+                    <ThemeToggle />
+                    <DropdownMenuSeparator />
+                    <DropdownMenuLabel>Settings</DropdownMenuLabel>
                     <DropdownMenuItem
                         className="dropdownItem text-base md:text-sm focus:bg-red-600 focus:text-slate-50 dark:focus:bg-red-600 dark:focus:text-slate-50"
                         onClick={toggleLogoutDialog}
@@ -68,11 +75,9 @@ export default function Account() {
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
                         Delete Account <TrashIcon />
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuLabel>Settings</DropdownMenuLabel>
-                    <ThemeToggle />
                 </DropdownMenuContent>
             </DropdownMenu>
+            {/* LOGOUT DIALOG */}
             <AlertDialog open={toggleLogout} onOpenChange={setToggleLogout}>
                 <AlertDialogContent className="w-4/5 sm:w-auto sm:max-w-lg">
                     <AlertDialogHeader>
@@ -82,10 +87,13 @@ export default function Account() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction>Continue</AlertDialogAction>
+                        <AlertDialogAction onClick={() => console.log("Logged out")}>
+                            Continue
+                        </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
+            {/* DELETE ACCOUNT DIALOG */}
             <AlertDialog open={toggleDeleteAccount} onOpenChange={setToggleDeleteAccount}>
                 <AlertDialogContent className="w-4/5 sm:w-auto sm:max-w-lg">
                     <AlertDialogHeader>
@@ -99,7 +107,9 @@ export default function Account() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction>Continue</AlertDialogAction>
+                        <AlertDialogAction onClick={() => console.log("Account deleted")}>
+                            Continue
+                        </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
