@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
     Sheet,
-    SheetClose,
     SheetContent,
     SheetDescription,
     SheetFooter,
@@ -11,8 +10,18 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import { DialogClose } from "@radix-ui/react-dialog";
 
-export default function Register() {
+type Props = {
+    currentState: boolean;
+    changeState: Function;
+};
+
+export default function Register({ currentState, changeState }: Props) {
+    const openSignInDialog = () => {
+        changeState(!currentState);
+    };
+
     //TODO Redirect to dashboard on sign in success
     return (
         <Sheet>
@@ -21,29 +30,48 @@ export default function Register() {
             </SheetTrigger>
             <SheetContent className="w-full sm:max-w-sm">
                 <SheetHeader>
-                    <SheetTitle>Create an account</SheetTitle>
+                    <SheetTitle className="text-md">Create an account</SheetTitle>
                     <SheetDescription>
-                        Make changes to your profile here. Click save when youre done.
+                        Create an account now to start using Scribblepads features.
                     </SheetDescription>
                 </SheetHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
+                <form className="grid place-items-end gap-4 py-4">
+                    <fieldset>
                         <Label htmlFor="name" className="text-right">
                             Name
                         </Label>
-                        <Input id="name" value="Pedro Duarte" className="col-span-3" />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Input id="name" className="col-span-3" />
+                    </fieldset>
+                    <fieldset>
                         <Label htmlFor="username" className="text-right">
-                            Username
+                            Email
                         </Label>
-                        <Input id="username" value="@peduarte" className="col-span-3" />
-                    </div>
-                </div>
-                <SheetFooter>
-                    <SheetClose asChild>
-                        <Button type="submit">Save changes</Button>
-                    </SheetClose>
+                        <Input id="username" className="col-span-3" />
+                    </fieldset>
+                    <fieldset>
+                        <Label htmlFor="password" className="text-right">
+                            Password
+                        </Label>
+                        <Input id="password" className="col-span-3" />
+                    </fieldset>
+                    <Button className="w-fit">Register</Button>
+                </form>
+                <SheetFooter className="mt-12">
+                    <section className="w-full flex flex-col gap-y-5">
+                        <h3 className="text-base font-bold">Prefer to use social media login?</h3>
+                        <p className="text-sm">
+                            Go to the{" "}
+                            <span>
+                                <DialogClose
+                                    className="p-0 underline hover:bg-transparent"
+                                    onClick={openSignInDialog}
+                                >
+                                    sign in
+                                </DialogClose>
+                            </span>{" "}
+                            section and select your prefered method.
+                        </p>
+                    </section>
                 </SheetFooter>
             </SheetContent>
         </Sheet>
