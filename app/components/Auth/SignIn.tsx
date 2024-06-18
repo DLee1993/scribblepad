@@ -12,10 +12,15 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 
-export default function SignIn() {
+type Props = {
+    currentState: boolean;
+    changeState: (open: boolean) => void;
+};
+
+export default function SignIn({ currentState, changeState }: Props) {
     //TODO Redirect to dashboard on sign in success
     return (
-        <Sheet>
+        <Sheet open={currentState} onOpenChange={changeState}>
             <SheetTrigger asChild>
                 <Button variant="outline">Sign in</Button>
             </SheetTrigger>
@@ -31,13 +36,13 @@ export default function SignIn() {
                         <Label htmlFor="name" className="text-right">
                             Name
                         </Label>
-                        <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                        <Input id="name" className="col-span-3" />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="username" className="text-right">
                             Username
                         </Label>
-                        <Input id="username" value="@peduarte" className="col-span-3" />
+                        <Input id="username" className="col-span-3" />
                     </div>
                 </div>
                 <SheetFooter>
