@@ -79,25 +79,34 @@ export default function Account() {
             </DropdownMenu>
             {/* LOGOUT DIALOG */}
             <AlertDialog open={toggleLogout} onOpenChange={setToggleLogout}>
-                <AlertDialogContent className="w-4/5 sm:w-auto sm:max-w-lg">
+                <AlertDialogContent
+                    className="w-4/5 sm:w-auto sm:max-w-lg"
+                    aria-describedby="logout of account"
+                >
                     <AlertDialogHeader>
-                        <AlertDialogTitle className="text-md">
+                        <AlertDialogTitle className="text-base">
                             Confirm you want to Logout?
                         </AlertDialogTitle>
+                        <AlertDialogDescription className="text-slate-950">
+                            This action cannot be undone.
+                        </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => console.log("Logged out")}>
-                            Continue
+                        <AlertDialogAction onClick={() => console.log("Account deleted")}>
+                            Logout
                         </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
             {/* DELETE ACCOUNT DIALOG */}
             <AlertDialog open={toggleDeleteAccount} onOpenChange={setToggleDeleteAccount}>
-                <AlertDialogContent className="w-4/5 sm:w-auto sm:max-w-lg">
+                <AlertDialogContent
+                    className="w-4/5 sm:w-auto sm:max-w-lg"
+                    aria-describedby="delete account"
+                >
                     <AlertDialogHeader>
-                        <AlertDialogTitle className="text-md">
+                        <AlertDialogTitle className="text-base">
                             Are you absolutely sure?
                         </AlertDialogTitle>
                         <AlertDialogDescription className="text-slate-950">
@@ -107,8 +116,8 @@ export default function Account() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => console.log("Account deleted")}>
-                            Continue
+                        <AlertDialogAction onClick={() => console.log("Account deleted")} className="bg-red-600">
+                            Delete Account
                         </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
