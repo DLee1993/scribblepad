@@ -1,13 +1,14 @@
 "use client";
 import Menu from "./Menu";
 import Account from "./Account";
-import Register from "../Auth/Register";
+import Register from "../Auth/RegisterForm";
 import { usePathname } from "next/navigation";
-import SignIn from "../Auth/SignIn";
+import SignIn from "../Auth/SignInForm";
 import { useState } from "react";
 
 export default function Navbar() {
     const [signInDialogToggle, setSignInDialogToggle] = useState<boolean>(false);
+    const [registerDialogToggle, setRegisterDialogToggle] = useState<boolean>(false);
     //TODO only show navbar content based on session, if no session, no navbar
     const pathname = usePathname();
     return (
@@ -23,8 +24,18 @@ export default function Navbar() {
                 <nav className="flex justify-between items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10">
                     <h1 className="text-md font-medium">Scribblepad</h1>
                     <section className="flex justify-center items-center gap-x-4">
-                        <Register currentState={signInDialogToggle} changeState={setSignInDialogToggle} />
-                        <SignIn currentState={signInDialogToggle} changeState={setSignInDialogToggle} />
+                        <Register
+                            signInToggleState={signInDialogToggle}
+                            changeSignInToggleState={setSignInDialogToggle}
+                            registerToggleState={registerDialogToggle}
+                            changeRegisterToggleState={setRegisterDialogToggle}
+                        />
+                        <SignIn
+                            signInToggleState={signInDialogToggle}
+                            changeSignInToggleState={setSignInDialogToggle}
+                            registerToggleState={registerDialogToggle}
+                            changeRegisterToggleState={setRegisterDialogToggle}
+                        />
                     </section>
                 </nav>
             )}
