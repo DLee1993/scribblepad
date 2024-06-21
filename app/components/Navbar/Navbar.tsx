@@ -1,10 +1,12 @@
 "use client";
+
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Menu from "./Menu";
 import Account from "./Account";
 import Register from "../Auth/RegisterForm";
-import { usePathname } from "next/navigation";
 import SignIn from "../Auth/SignInForm";
-import { useState } from "react";
+import CreateNewDocument from "./CreateNewDocument";
 
 export default function Navbar() {
     const [signInDialogToggle, setSignInDialogToggle] = useState<boolean>(false);
@@ -17,6 +19,7 @@ export default function Navbar() {
                 <nav className="flex justify-between items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10 border-b-2 border-slate-950/10 dark:border-slate-50/10">
                     <Menu />
                     <section className="flex justify-center items-center gap-x-4">
+                        <CreateNewDocument />
                         <Account />
                     </section>
                 </nav>
