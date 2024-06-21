@@ -26,7 +26,7 @@ export default function Menu() {
     return (
         <Sheet open={menuStatus} onOpenChange={setMenuStatus}>
             <SheetTrigger>
-                <HamburgerMenuIcon className="size-6" />
+                <HamburgerMenuIcon className="size-6" aria-label="open menu" />
             </SheetTrigger>
             <SheetContent
                 side="left"
