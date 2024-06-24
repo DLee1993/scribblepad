@@ -45,10 +45,10 @@ export default function Account() {
                         <ProfileAvatar />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-52 dark:bg-[var(--background)]">
+                <DropdownMenuContent align="end" className="w-52 themeStyles">
                     <DropdownMenuLabel>My account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="dropdownItem text-base md:text-sm focus:bg-slate-950 focus:text-slate-50 dark:focus:bg-slate-50 dark:focus:text-slate-950 p-0">
+                    <DropdownMenuItem className="dropdownItem themeStyles focusStyles text-base md:text-sm p-0">
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
                         <Link
                             href="/profile"
@@ -62,14 +62,14 @@ export default function Account() {
                     <DropdownMenuSeparator />
                     <DropdownMenuLabel>Settings</DropdownMenuLabel>
                     <DropdownMenuItem
-                        className="dropdownItem text-base md:text-sm focus:bg-red-600 focus:text-slate-50 dark:focus:bg-red-600 dark:focus:text-slate-50"
+                        className="dropdownItem warningStyles text-base md:text-sm"
                         onClick={toggleLogoutDialog}
                     >
                         Logout
                         <LockClosedIcon />
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                        className="dropdownItem text-base md:text-sm focus:bg-red-600 focus:text-slate-50 dark:focus:bg-red-600 dark:focus:text-slate-50"
+                        className="dropdownItem warningStyles text-base md:text-sm"
                         onClick={toggleDeleteAccountDialog}
                     >
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
@@ -116,7 +116,10 @@ export default function Account() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => console.log("Account deleted")} className="bg-red-600">
+                        <AlertDialogAction
+                            onClick={() => console.log("Account deleted")}
+                            className="bg-red-600"
+                        >
                             Delete Account
                         </AlertDialogAction>
                     </AlertDialogFooter>
@@ -124,4 +127,27 @@ export default function Account() {
             </AlertDialog>
         </>
     );
+}
+
+{
+    /**
+    <ul id="menuList">
+                        {pageLinks.map(({ href, pageName, icon }, i) => (
+                            <li key={i} id={`link-${i}`}>
+                                <Link
+                                    href={href}
+                                    onClick={changeMenuStatus}
+                                    className={`link ${
+                                        pathname === `/${pageName}` ? "active" : ""
+                                    }`}
+                                >
+                                    {pageName}
+                                    <span>{icon}</span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul> 
+                    
+                    import { ReaderIcon, CalendarIcon, CheckboxIcon, DesktopIcon } from "@radix-ui/react-icons";
+                    */
 }

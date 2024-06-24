@@ -28,3 +28,10 @@ export const SignInSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
     password: z.string(),
 });
+
+export const NoteSchema = z.object({
+    title: z.string().min(1, { message: "- missing information" }),
+    content: z.string().min(1, { message: "- missing information" }),
+    tag: z.string().optional(),
+    error: z.string().optional(),
+});

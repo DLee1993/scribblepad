@@ -57,58 +57,14 @@
         @apply text-base;
     }
     nav {
-        @apply min-h-[var(--headerHeight)];
+        @apply min-h-[var(--headerHeight)] flex justify-between items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10;
     }
     main {
-        @apply min-h-[calc(100vh-var(--headerHeight))] py-4 px-4 md:px-6 lg:px-8 xl:px-10 grid place-items-center;
-    }
-
-    form {
-        @apply w-full grid place-items-end gap-2;
-    }
-
-    form > fieldset {
-        @apply w-full space-y-2;
+        @apply min-h-[calc(100vh-var(--headerHeight))] grid place-items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10;
     }
 }
 
-@layer components {
-    #menuList {
-        @apply flex flex-col gap-y-2 w-full;
-    }
-
-    #menuList li a {
-        @apply flex justify-between items-center p-2 rounded-md pl-3;
-    }
-
-    a#logo {
-        @apply hover:bg-none dark:hover:bg-none;
-    }
-
-    #menuList a,
-    #footer a {
-        @apply hover:bg-slate-200 dark:hover:bg-slate-50/15;
-    }
-
-    #menuList a.active,
-    #footer a.active {
-        @apply transition-colors bg-[var(--foreground)] text-[var(--background)] dark:bg-[var(--foreground)] dark:text-[var(--background)];
-    }
-
-    .dropdownItem,
-    .dropdownItem a {
-        @apply w-full flex justify-between items-center rounded-md;
-    }
-
-    #labelContainer {
-        @apply flex justify-start items-center flex-wrap gap-x-3 min-h-5;
-    }
-
-    #authContentStyle {
-        @apply w-full sm:max-w-sm flex flex-col justify-between items-start;
-    }
-
-    .error {
-        @apply text-sm text-red-600 p-0 m-0;
-    }
-}
+/* [role="menu"],
+[role="dialog"] {
+    @apply bg-[var(--foreground)] text-[var(--foreground)] dark:bg-[var(--foreground)] dark:text-[var(--foreground)];
+} */

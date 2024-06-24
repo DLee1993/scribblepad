@@ -11,3 +11,17 @@ export type SignInForm = {
     email: string;
     password: string;
 };
+
+export type NoteForm = {
+    title: string;
+    content: string;
+    error: string | undefined;
+    tag: string | undefined;
+};
+
+export type TaskForm = {
+    title: string;
+    content: string;
+    completedBy: string;
+    completed: boolean | string;
+};
