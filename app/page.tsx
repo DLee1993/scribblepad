@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Navbar from "./components/Navbar/Navbar";
 import Link from "next/link";
 import { useState } from "react";
+import SignIn from "./components/Auth/SignIn";
 export default function Home() {
     const [signInToggle, setSignInToggle] = useState<boolean>(false);
 
@@ -11,7 +11,11 @@ export default function Home() {
 
     return (
         <>
-            <Navbar signInOpen={signInToggle} changeSignIn={setSignInToggle} />
+            <nav>
+                <section className="flex justify-center items-center gap-x-4">
+                    <SignIn signInOpen={signInToggle} toggleSignIn={setSignInToggle} />
+                </section>
+            </nav>
             <main>
                 <section className="text-center flex justify-evenly items-center flex-col min-h-80 lg:min-h-96">
                     <aside className="-mt-5 flex justify-evenly items-center flex-col">
@@ -77,7 +81,7 @@ export default function Home() {
                 </section>
             </main>
             <footer>
-                <section className="min-h-44 flex flex-col justify-evenly items-center text-center mb-20">
+                <section className="min-h-44 2xl:min-h-72 flex flex-col justify-evenly items-center text-center mb-20">
                     <h3 className="text-md font-medium">
                         So what are you waiting for? Let&apos;s start organising your life.
                     </h3>

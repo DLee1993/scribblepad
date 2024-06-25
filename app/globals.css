@@ -69,7 +69,10 @@
         @apply min-h-[var(--headerHeight)] flex justify-end items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10;
     }
     main {
-        @apply px-4 md:px-6 lg:px-8 xl:px-10;
+        @apply px-4 md:px-6 lg:px-8 xl:px-10 2xl:max-w-[75%] 2xl:mx-auto;
+    }
+    footer {
+        @apply 2xl:max-w-[75%] 2xl:mx-auto;
     }
 }
 
