@@ -23,7 +23,7 @@ export default function Navbar({ signInOpen, changeSignIn }: Props) {
             ) : (
                 <nav>
                     <section className="flex justify-center items-center gap-x-4">
-                        <SignIn signInOpen={signInOpen} changeSignIn={changeSignIn} />
+                        <SignIn signInOpen={signInOpen} toggleSignIn={changeSignIn} />
                     </section>
                 </nav>
             )}
