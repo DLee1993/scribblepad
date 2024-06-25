@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Account from "./Account";
+import SignIn from "../Auth/SignIn";
 
 export default function Navbar() {
     //TODO only show navbar content based on session, if no session, no navbar
@@ -18,7 +19,7 @@ export default function Navbar() {
                 <nav className="flex justify-between items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10">
                     <h1 className="text-md font-medium">Scribblepad</h1>
                     <section className="flex justify-center items-center gap-x-4">
-                        authenticate user here
+                        <SignIn />
                     </section>
                 </nav>
             )}
