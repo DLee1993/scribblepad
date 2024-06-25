@@ -1,9 +1,106 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
 import Navbar from "./components/Navbar/Navbar";
+import Link from "next/link";
+import { useState } from "react";
 export default function Home() {
+    const [signInToggle, setSignInToggle] = useState<boolean>(false);
+
+    const toggleSignIn = () => setSignInToggle(!signInToggle);
+
     return (
         <>
-            <Navbar />
-            <main>landing page to showcase scribblepad</main>
+            <Navbar signInOpen={signInToggle} changeSignIn={setSignInToggle} />
+            <main>
+                <section className="text-center flex justify-evenly items-center flex-col min-h-80 lg:min-h-96">
+                    <aside className="-mt-5 flex justify-evenly items-center flex-col">
+                        <h1 className="text-4xl font-medium">Scribblepad</h1>
+                        <p className="max-w-xl">
+                            Your one stop shop for all your organisational needs. When you use
+                            Scribblepad, you&apos;ll never forget.
+                        </p>
+                    </aside>
+                    <Button onClick={toggleSignIn}>Get Started</Button>
+                </section>
+                <section id="features" className="mt-20">
+                    <section id="dashboard" className="flex flex-wrap mb-20 gap-y-10 lg:gap-y-0">
+                        <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
+                            <h2 className="text-lg">The Dashboard</h2>
+                            <p>
+                                The dashboard gives you a sneak peak into what&apos;s going on,
+                                track the progress of your tasks, see your recent notes and see the
+                                upcoming dates on the calendar.
+                            </p>
+                        </article>
+                        <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
+                    </section>
+                    <section
+                        id="notes"
+                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-10 lg:gap-y-0"
+                    >
+                        <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
+                            <h2 className="text-lg">Jot down notes</h2>
+                            <p>
+                                The dashboard gives you a sneak peak into what&apos;s going on,
+                                track the progress of your tasks, see your recent notes and see the
+                                upcoming dates on the calendar.
+                            </p>
+                        </article>
+                        <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
+                    </section>
+                    <section id="tasks" className="flex flex-wrap mb-20 gap-y-10 lg:gap-y-0">
+                        <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
+                            <h2 className="text-lg">Organise and prioritise tasks</h2>
+                            <p>
+                                The dashboard gives you a sneak peak into what&apos;s going on,
+                                track the progress of your tasks, see your recent notes and see the
+                                upcoming dates on the calendar.
+                            </p>
+                        </article>
+                        <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
+                    </section>
+                    <section
+                        id="tasks"
+                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-10 lg:gap-y-0"
+                    >
+                        <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
+                            <h2 className="text-lg">Organise using our built in calendar</h2>
+                            <p>
+                                The dashboard gives you a sneak peak into what&apos;s going on,
+                                track the progress of your tasks, see your recent notes and see the
+                                upcoming dates on the calendar.
+                            </p>
+                        </article>
+                        <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
+                    </section>
+                </section>
+            </main>
+            <footer>
+                <section className="min-h-44 flex flex-col justify-evenly items-center text-center mb-20">
+                    <h3 className="text-md font-medium">
+                        So what are you waiting for? Let&apos;s start organising your life.
+                    </h3>
+                    <Button onClick={toggleSignIn}>Get Started</Button>
+                </section>
+                <section className="min-h-20 flex flex-wrap justify-center lg:justify-between items-center px-10">
+                    <ul className="flex gap-x-4">
+                        <li>
+                            <Link href="https://portfolio-23u5.onrender.com/" target="_blank">
+                                Portfolio
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="https://github.com/DLee1993" target="_blank">
+                                Github
+                            </Link>
+                        </li>
+                    </ul>
+                    <p className="text-slate-400">
+                        Designed & Built by <span>David Lee</span>
+                    </p>
+                </section>
+            </footer>
         </>
     );
 }

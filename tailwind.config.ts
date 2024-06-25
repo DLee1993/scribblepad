@@ -26,6 +26,7 @@ const config = {
                 xl: "var(--font-size-xl)",
                 "2xl": "var(--font-size-xxl)",
                 "3xl": "var(--font-size-xxxl)",
+                "4xl": "var(--font-size-xxxxl)",
             },
             keyframes: {
                 "accordion-down": {

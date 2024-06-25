@@ -9,15 +9,18 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 
-export default function SignIn() {
+type Props = {
+    signInOpen: boolean;
+    changeSignIn: (open: boolean) => void;
+};
+
+export default function SignIn({ signInOpen, changeSignIn }: Props) {
     var hours = new Date().getHours();
 
     return (
-        <Sheet>
+        <Sheet open={signInOpen} onOpenChange={changeSignIn}>
             <SheetTrigger asChild>
-                <Button className="bg-[var(--dark)] text-[var(--light)] rounded-md text-base p-6">
-                    Sign in
-                </Button>
+                <Button className="bg-[var(--dark)] text-[var(--light)] rounded-md">Sign in</Button>
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>

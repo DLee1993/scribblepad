@@ -4,7 +4,12 @@ import { usePathname } from "next/navigation";
 import Account from "./Account";
 import SignIn from "../Auth/SignIn";
 
-export default function Navbar() {
+type Props = {
+    signInOpen: boolean;
+    changeSignIn: (open: boolean) => void;
+};
+
+export default function Navbar({ signInOpen, changeSignIn }: Props) {
     //TODO only show navbar content based on session, if no session, no navbar
     const pathname = usePathname();
     return (
@@ -16,10 +21,9 @@ export default function Navbar() {
                     </section>
                 </nav>
             ) : (
-                <nav className="flex justify-between items-center py-4 px-4 md:px-6 lg:px-8 xl:px-10">
-                    <h1 className="text-md font-medium">Scribblepad</h1>
+                <nav>
                     <section className="flex justify-center items-center gap-x-4">
-                        <SignIn />
+                        <SignIn signInOpen={signInOpen} changeSignIn={changeSignIn} />
                     </section>
                 </nav>
             )}
