@@ -28,7 +28,7 @@ export default function Home() {
                     <Button onClick={toggleSignIn}>Get Started</Button>
                 </section>
                 <section id="features" className="mt-20">
-                    <section id="dashboard" className="flex flex-wrap mb-20 gap-y-10 lg:gap-y-0">
+                    <section id="dashboard" className="flex flex-wrap mb-20 gap-y-5 lg:gap-y-0">
                         <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
                             <h2 className="text-lg">The Dashboard</h2>
                             <p>
@@ -41,7 +41,7 @@ export default function Home() {
                     </section>
                     <section
                         id="notes"
-                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-10 lg:gap-y-0"
+                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-5 lg:gap-y-0"
                     >
                         <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
                             <h2 className="text-lg">Jot down notes</h2>
@@ -53,7 +53,7 @@ export default function Home() {
                         </article>
                         <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
                     </section>
-                    <section id="tasks" className="flex flex-wrap mb-20 gap-y-10 lg:gap-y-0">
+                    <section id="tasks" className="flex flex-wrap mb-20 gap-y-5 lg:gap-y-0">
                         <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
                             <h2 className="text-lg">Organise and prioritise tasks</h2>
                             <p>
@@ -66,7 +66,7 @@ export default function Home() {
                     </section>
                     <section
                         id="tasks"
-                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-10 lg:gap-y-0"
+                        className="flex flex-row-reverse flex-wrap mb-20 gap-y-5 lg:gap-y-0"
                     >
                         <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
                             <h2 className="text-lg">Organise using our built in calendar</h2>
