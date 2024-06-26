@@ -11,18 +11,18 @@ import {
 
 type Props = {
     signInOpen: boolean;
-    toggleSignIn: (open: boolean) => void;
+    changeSignInToggle: (open: boolean) => void;
 };
 
-export default function SignIn({ signInOpen, toggleSignIn }: Props) {
+export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
     var hours = new Date().getHours();
 
     return (
-        <Sheet open={signInOpen} onOpenChange={toggleSignIn}>
+        <Sheet open={signInOpen} onOpenChange={changeSignInToggle}>
             <SheetTrigger asChild>
                 <Button className="bg-[var(--dark)] text-[var(--light)] rounded-md">Sign in</Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent onCloseAutoFocus={(e) => e.preventDefault()}>
                 <SheetHeader>
                     <SheetTitle className="text-md">
                         {hours >= 0 && hours < 12
