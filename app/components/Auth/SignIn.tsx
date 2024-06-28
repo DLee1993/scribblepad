@@ -1,6 +1,15 @@
 "use client";
 
+import { AuthSchema } from "@/schemas/ZodSchema";
+import { AuthSchemaType } from "@/schemas/ZodSchema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { EyeOpenIcon, EyeClosedIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
     Sheet,
     SheetContent,
@@ -10,14 +19,6 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { AuthSchema } from "@/schemas/ZodSchema";
-import { AuthSchemaType } from "@/schemas/ZodSchema";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 type Props = {
     signInOpen: boolean;
@@ -27,6 +28,8 @@ type Props = {
 export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
     var hours = new Date().getHours();
     const [isUser, setIsUser] = useState<boolean | null>(null);
+    const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [showConfirmedPassword, setShowConfirmedPassword] = useState<boolean>(false);
     const router = useRouter();
 
     const {
@@ -133,17 +136,43 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 <p role="alert">{errors?.password?.message}</p>
                                             )}
                                         </div>
-                                        <Input
-                                            id="password"
-                                            type="password"
-                                            placeholder="Enter password"
-                                            className={
-                                                errors.password &&
-                                                "border-2 border-[var(--warning)]"
-                                            }
-                                            autoComplete="true"
-                                            {...register("password")}
-                                        />
+                                        <div className="relative">
+                                            <Input
+                                                id="password"
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder="Enter password"
+                                                className={
+                                                    errors.password &&
+                                                    "border-2 border-[var(--warning)]"
+                                                }
+                                                autoComplete="true"
+                                                {...register("password")}
+                                            />
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                className="p-0 h-fit absolute right-0 bottom-1/2 translate-y-1/2 hover:bg-transparent"
+                                                onClick={() => setShowPassword((prev) => !prev)}
+                                            >
+                                                {showPassword ? (
+                                                    <EyeOpenIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <EyeClosedIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                <span className="sr-only">
+                                                    {showPassword
+                                                        ? "Hide password"
+                                                        : "Show password"}
+                                                </span>
+                                            </Button>
+                                        </div>
                                     </fieldset>
                                     <Button>Login</Button>
                                 </>
@@ -174,17 +203,43 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 <p role="alert">{errors?.password?.message}</p>
                                             )}
                                         </div>
-                                        <Input
-                                            id="password"
-                                            type="password"
-                                            placeholder="Enter password"
-                                            className={
-                                                errors.password &&
-                                                "border-2 border-[var(--warning)]"
-                                            }
-                                            autoComplete="true"
-                                            {...register("password")}
-                                        />
+                                        <div className="relative">
+                                            <Input
+                                                id="password"
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder="Enter password"
+                                                className={
+                                                    errors.password &&
+                                                    "border-2 border-[var(--warning)]"
+                                                }
+                                                autoComplete="true"
+                                                {...register("password")}
+                                            />
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                className="p-0 h-fit absolute right-0 bottom-1/2 translate-y-1/2 hover:bg-transparent"
+                                                onClick={() => setShowPassword((prev) => !prev)}
+                                            >
+                                                {showPassword ? (
+                                                    <EyeOpenIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <EyeClosedIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                <span className="sr-only">
+                                                    {showPassword
+                                                        ? "Hide password"
+                                                        : "Show password"}
+                                                </span>
+                                            </Button>
+                                        </div>
                                     </fieldset>
                                     <fieldset>
                                         <div className="flex items-center gap-x-2 min-h-5">
@@ -197,17 +252,45 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 </p>
                                             )}
                                         </div>
-                                        <Input
-                                            id="confirmPassword"
-                                            type="password"
-                                            placeholder="Re-enter your password"
-                                            className={
-                                                errors.confirmPassword &&
-                                                "border-2 border-[var(--warning)]"
-                                            }
-                                            autoComplete="true"
-                                            {...register("confirmPassword")}
-                                        />
+                                        <div className="relative">
+                                            <Input
+                                                id="confirmPassword"
+                                                type={showConfirmedPassword ? "text" : "password"}
+                                                placeholder="Re-enter your password"
+                                                className={
+                                                    errors.confirmPassword &&
+                                                    "border-2 border-[var(--warning)]"
+                                                }
+                                                autoComplete="true"
+                                                {...register("confirmPassword")}
+                                            />
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="sm"
+                                                className="p-0 h-fit absolute right-0 bottom-1/2 translate-y-1/2 hover:bg-transparent"
+                                                onClick={() =>
+                                                    setShowConfirmedPassword((prev) => !prev)
+                                                }
+                                            >
+                                                {showConfirmedPassword ? (
+                                                    <EyeOpenIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <EyeClosedIcon
+                                                        className="h-4 w-4"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                <span className="sr-only">
+                                                    {showConfirmedPassword
+                                                        ? "Hide password"
+                                                        : "Show password"}
+                                                </span>
+                                            </Button>
+                                        </div>
                                     </fieldset>
                                     <Button>Login</Button>
                                 </>
