@@ -74,6 +74,30 @@
     footer {
         @apply 2xl:max-w-[75%] 2xl:mx-auto;
     }
+
+    form {
+        @apply w-full flex flex-col justify-start items-end;
+    }
+
+    form fieldset {
+        @apply w-full;
+    }
+
+    form label {
+        @apply sr-only;
+    }
+
+    form input {
+        @apply !border-l-0 !border-r-0 !border-t-0 !border-b-[1px] !border-[var(--dark)] dark:!border-[var(--light)] !shadow-none !outline-none !rounded-none !p-0 focus-visible:!ring-0;
+    }
+
+    form button {
+        @apply mt-5;
+    }
+
+    [role="alert"] {
+        @apply text-red-600 text-sm;
+    }
 }
 
 /* [role="menu"],

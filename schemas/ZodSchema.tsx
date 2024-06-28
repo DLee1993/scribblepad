@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const RegisterSchema = z
+export const AuthSchema = z
     .object({
         name: z.string().min(1, { message: "required" }).optional(),
         email: z.string().email({ message: "Invalid email address" }),
@@ -15,12 +15,14 @@ export const RegisterSchema = z
                 path: ["name"],
             });
         }
-        if (confirmPassword !== password) {
-            ctx.addIssue({
-                code: "custom",
-                message: "Passwords do not match",
-                path: ["confirmPassword"],
-            });
+        if (confirmPassword !== undefined) {
+            if (confirmPassword !== password) {
+                ctx.addIssue({
+                    code: "custom",
+                    message: "Passwords do not match",
+                    path: ["confirmPassword"],
+                });
+            }
         }
     });
 
@@ -30,3 +32,5 @@ export const NoteSchema = z.object({
     tag: z.string().optional(),
     error: z.string().optional(),
 });
+
+export type AuthSchemaType = z.infer<typeof AuthSchema>;
