@@ -30,7 +30,7 @@ export default function Home() {
                 <section id="features" className="mt-20">
                     <section id="dashboard" className="flex flex-wrap mb-20 gap-y-5 lg:gap-y-0">
                         <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
-                            <h2 className="text-lg">The Dashboard</h2>
+                            <h2 className="text-md font-medium">The Dashboard</h2>
                             <p>
                                 The dashboard gives you a sneak peak into what&apos;s going on,
                                 track the progress of your tasks, see your recent notes and see the
@@ -46,7 +46,7 @@ export default function Home() {
                         className="flex flex-row-reverse flex-wrap mb-20 gap-y-5 lg:gap-y-0"
                     >
                         <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
-                            <h2 className="text-lg">Jot down notes</h2>
+                            <h2 className="text-md font-medium">Jot down notes</h2>
                             <p>
                                 The notes section allows you to jot down reminders for meetings,
                                 take notes during classes, or write out your weekly shopping list.
@@ -59,7 +59,7 @@ export default function Home() {
                     </section>
                     <section id="tasks" className="flex flex-wrap mb-20 gap-y-5 lg:gap-y-0">
                         <article className="flex flex-col gap-y-5 lg:pr-8 w-full lg:w-1/2">
-                            <h2 className="text-lg">Organise and prioritise tasks</h2>
+                            <h2 className="text-md font-medium">Organise and prioritise tasks</h2>
                             <p>
                                 The tasks sections is where the real organising takes place, here
                                 you can add a title and description, a date to be completed by and a
@@ -75,7 +75,7 @@ export default function Home() {
                         className="flex flex-row-reverse flex-wrap mb-20 gap-y-5 lg:gap-y-0"
                     >
                         <article className="flex flex-col gap-y-5 lg:pl-8 w-full lg:w-1/2">
-                            <h2 className="text-lg">Organise using our built in calendar</h2>
+                            <h2 className="text-md font-medium">Organise using our built in calendar</h2>
                             <p>The calendar helps you organise your tasks by deadlines.</p>
                         </article>
                         <figure className="bg-slate-400 w-full lg:w-1/2 lg:min-w-96 h-96"></figure>
@@ -84,12 +84,12 @@ export default function Home() {
             </main>
             <footer>
                 <section className="min-h-44 2xl:min-h-72 flex flex-col justify-evenly items-center text-center mb-20">
-                    <h3 className="text-md font-medium">
+                    <h3 className="text-base font-medium">
                         So what are you waiting for? Let&apos;s start organising your life.
                     </h3>
                     <Button onClick={toggleSignIn}>Get Started</Button>
                 </section>
-                <section className="min-h-20 flex flex-wrap justify-center lg:justify-between items-center px-10">
+                <section className="min-h-20 flex flex-col sm:flex-row justify-center sm:justify-between items-center px-10 gap-y-5 text-sm">
                     <ul className="flex gap-x-4">
                         <li>
                             <Link href="https://portfolio-23u5.onrender.com/" target="_blank">
@@ -102,7 +102,7 @@ export default function Home() {
                             </Link>
                         </li>
                     </ul>
-                    <p className="text-slate-400">
+                    <p>
                         Designed & Built by <span>David Lee</span>
                     </p>
                 </section>
