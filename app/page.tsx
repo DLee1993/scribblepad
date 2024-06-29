@@ -52,7 +52,7 @@ export default function Home() {
                         src={illustration}
                         alt="pile of unorganised notes"
                         placeholder="blur"
-                        className="w-full max-w-md absolute top-0 md:right-20 -z-10 opacity-40 lg:opacity-100"
+                        className="w-full max-w-md absolute bottom-0 md:top-0 md:right-20 -z-10 opacity-40 lg:opacity-100"
                     />
                 </section>
                 <section id="features" className="flex flex-col gap-y-20">
