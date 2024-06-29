@@ -88,7 +88,7 @@
     }
 
     form input {
-        @apply !border-l-0 !border-r-0 !border-t-0 !border-b-[1px] !border-[var(--dark)] dark:!border-[var(--light)] !shadow-none !outline-none !rounded-none !p-0 focus-visible:!ring-0;
+        @apply !border-l-0 !border-r-0 !border-t-0 !border-b-[1px] !border-[var(--dark)] dark:!border-[var(--light)] !shadow-none !outline-none !rounded-none !p-0 focus-visible:!ring-0 placeholder:text-base md:placeholder:text-sm;
     }
 
     form button {

@@ -87,11 +87,11 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
             </SheetTrigger>
             <SheetContent
                 onCloseAutoFocus={(e) => e.preventDefault()}
-                className="flex flex-col justify-between"
+                className="flex flex-col justify-between w-full md:w-auto"
             >
                 <div id="flex_container">
-                    <SheetHeader>
-                        <SheetTitle className="text-md">
+                    <SheetHeader className="text-left">
+                        <SheetTitle className="text-lg lg:text-md">
                             {hours >= 0 && hours < 12
                                 ? "Good Morning"
                                 : hours >= 12 && hours < 18
@@ -99,7 +99,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                 : "Good Evening"}
                             ,
                         </SheetTitle>
-                        <SheetDescription className="max-w-80 text-sm">
+                        <SheetDescription className="md:max-w-80 text-base md:text-sm">
                             Sign in or create an account to start organising your day.
                         </SheetDescription>
                     </SheetHeader>
