@@ -83,7 +83,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
     return (
         <Sheet open={signInOpen} onOpenChange={changeSignInToggle}>
             <SheetTrigger asChild>
-                <Button className="bg-[var(--dark)] text-[var(--light)] rounded-md">Sign in</Button>
+                <Button className="bg-[var(--accent)] px-8 py-6 rounded-md">Sign in</Button>
             </SheetTrigger>
             <SheetContent
                 onCloseAutoFocus={(e) => e.preventDefault()}
@@ -113,7 +113,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                 id="email"
                                 type="email"
                                 placeholder="Enter email address"
-                                className={errors.email && "border-2 border-[var(--warning)]"}
+                                className={errors.email && "border-2 border-[var(--accent)]"}
                                 autoComplete="true"
                                 {...register("email")}
                             />
@@ -143,7 +143,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 placeholder="Enter password"
                                                 className={
                                                     errors.password &&
-                                                    "border-2 border-[var(--warning)]"
+                                                    "border-2 border-[var(--accent)]"
                                                 }
                                                 autoComplete="true"
                                                 {...register("password")}
@@ -190,7 +190,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                             type="name"
                                             placeholder="Enter name"
                                             className={
-                                                errors.name && "border-2 border-[var(--warning)]"
+                                                errors.name && "border-2 border-[var(--accent)]"
                                             }
                                             autoComplete="true"
                                             {...register("name")}
@@ -210,7 +210,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 placeholder="Enter password"
                                                 className={
                                                     errors.password &&
-                                                    "border-2 border-[var(--warning)]"
+                                                    "border-2 border-[var(--accent)]"
                                                 }
                                                 autoComplete="true"
                                                 {...register("password")}
@@ -259,7 +259,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                                                 placeholder="Re-enter your password"
                                                 className={
                                                     errors.confirmPassword &&
-                                                    "border-2 border-[var(--warning)]"
+                                                    "border-2 border-[var(--accent)]"
                                                 }
                                                 autoComplete="true"
                                                 {...register("confirmPassword")}
