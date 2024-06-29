@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "../themeprovider";
+import Account from "../components/Navbar/Account";
 
 export const metadata: Metadata = {
     title: "Scribblepad",
@@ -11,5 +11,13 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <ThemeProvider defaultTheme="system">{children}</ThemeProvider>;
+    return (
+        <>
+            <nav className="w-full flex justify-between items-center">
+                <h1 className="text-md font-bold">Scribblepad</h1>
+                <Account />
+            </nav>
+            {children}
+        </>
+    );
 }

@@ -45,7 +45,10 @@ export default function Home() {
                             When you use Scribblepad, you&apos;ll never forget.
                         </p>
                     </aside>
-                    <Button onClick={toggleSignIn} className="bg-[var(--accent)] px-8 py-6">
+                    <Button
+                        onClick={toggleSignIn}
+                        className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--light)] dark:text-[var(--light)] dark:hover:text-[var(--dark)] px-8 py-6"
+                    >
                         Try now
                     </Button>
                     <Image
@@ -171,7 +174,10 @@ export default function Home() {
                     <h3 className="text-xl font-bold max-w-3xl leading-none">
                         So what are you waiting for? Let&apos;s start organising your life.
                     </h3>
-                    <Button onClick={toggleSignIn} className="bg-[var(--accent)] px-8 py-6">
+                    <Button
+                        onClick={toggleSignIn}
+                        className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--light)] dark:text-[var(--light)] dark:hover:text-[var(--dark)] px-8 py-6"
+                    >
                         Try now
                     </Button>
                 </section>

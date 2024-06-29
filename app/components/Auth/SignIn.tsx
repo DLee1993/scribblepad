@@ -83,11 +83,11 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
     return (
         <Sheet open={signInOpen} onOpenChange={changeSignInToggle}>
             <SheetTrigger asChild>
-                <Button className="bg-[var(--accent)] px-8 py-6 rounded-md">Sign in</Button>
+                <Button className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--light)] dark:text-[var(--light)] dark:hover:text-[var(--dark)] px-8 py-6 rounded-md">Sign in</Button>
             </SheetTrigger>
             <SheetContent
                 onCloseAutoFocus={(e) => e.preventDefault()}
-                className="flex flex-col justify-between w-full md:w-auto"
+                className="flex flex-col justify-between w-full md:w-auto dark:bg-[var(--dark)]"
             >
                 <div id="flex_container">
                     <SheetHeader className="text-left">
@@ -122,6 +122,7 @@ export default function SignIn({ signInOpen, changeSignInToggle }: Props) {
                             <Button
                                 type="button"
                                 onClick={() => checkUserExists(getValues("email"))}
+                                className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--dark)] dark:text-[var(--light)]"
                             >
                                 Continue
                             </Button>

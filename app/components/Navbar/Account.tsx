@@ -45,14 +45,14 @@ export default function Account() {
                         <ProfileAvatar />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-52 themeStyles">
+                <DropdownMenuContent align="end" className="w-52 dark:bg-[var(--dark)]">
                     <DropdownMenuLabel>My account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="dropdownItem themeStyles focusStyles text-base md:text-sm p-0">
+                    <DropdownMenuItem className="text-base md:text-sm p-0">
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
                         <Link
                             href="/profile"
-                            className="block w-full h-full px-2 py-1.5"
+                            className="w-full h-full px-2 py-1.5 flex justify-between items-center"
                             onClick={changeMenuStatus}
                         >
                             Profile <PersonIcon />
@@ -61,15 +61,16 @@ export default function Account() {
                     <ThemeToggle />
                     <DropdownMenuSeparator />
                     <DropdownMenuLabel>Settings</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
                     <DropdownMenuItem
-                        className="dropdownItem warningStyles text-base md:text-sm"
+                        className="text-base md:text-sm flex justify-between items-center"
                         onClick={toggleLogoutDialog}
                     >
                         Logout
                         <LockClosedIcon />
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                        className="dropdownItem warningStyles text-base md:text-sm"
+                        className="text-base md:text-sm flex justify-between items-center"
                         onClick={toggleDeleteAccountDialog}
                     >
                         {/* !!!! DO NOT SHOW FOR GUEST ACCOUNT !!!! */}
@@ -80,7 +81,7 @@ export default function Account() {
             {/* LOGOUT DIALOG */}
             <AlertDialog open={toggleLogout} onOpenChange={setToggleLogout}>
                 <AlertDialogContent
-                    className="w-4/5 sm:w-auto sm:max-w-lg"
+                    className="w-4/5 sm:w-auto sm:max-w-lg dark:bg-[var(--dark)] border-2 border-slate-50"
                     aria-describedby="logout of account"
                 >
                     <AlertDialogHeader>
@@ -93,7 +94,10 @@ export default function Account() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => console.log("Account deleted")}>
+                        <AlertDialogAction
+                            onClick={() => console.log("Account deleted")}
+                            className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--light)] dark:text-[var(--light)] dark:hover:text-[var(--dark)]"
+                        >
                             Logout
                         </AlertDialogAction>
                     </AlertDialogFooter>
@@ -102,7 +106,7 @@ export default function Account() {
             {/* DELETE ACCOUNT DIALOG */}
             <AlertDialog open={toggleDeleteAccount} onOpenChange={setToggleDeleteAccount}>
                 <AlertDialogContent
-                    className="w-4/5 sm:w-auto sm:max-w-lg"
+                    className="w-4/5 sm:w-auto sm:max-w-lg dark:bg-[var(--dark)] border-2 border-slate-50"
                     aria-describedby="delete account"
                 >
                     <AlertDialogHeader>
@@ -118,7 +122,7 @@ export default function Account() {
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
                         <AlertDialogAction
                             onClick={() => console.log("Account deleted")}
-                            className="bg-red-600"
+                            className="bg-[var(--accent)] dark:bg-[var(--accent)] text-[var(--light)] dark:text-[var(--light)] dark:hover:text-[var(--dark)]"
                         >
                             Delete Account
                         </AlertDialogAction>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "../app/themeprovider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -19,7 +20,9 @@ export default function RootLayout({
             <head>
                 <link rel="icon" href="/images/favicon.ico" />
             </head>
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <ThemeProvider>{children}</ThemeProvider>
+            </body>
         </html>
     );
 }
